@@ -167,3 +167,48 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+/* =================== */
+/* --- About Page Styles --- */
+/* =================== */
+
+.about-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 5%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 85px); /* Optional: Makes the section fill the screen height */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.profile-image-container {
+    flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* This makes the image a perfect circle */
+    object-fit: cover;   /* This prevents the image from being squished */
+}
+
+.about-text h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: var(--secondary-text-color);
+    line-height: 1.7;
+}
