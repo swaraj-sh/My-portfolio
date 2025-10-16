@@ -136,7 +136,7 @@ body {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     background-image: url('images/logo-design.png'); /* Placeholder color */
-    background-size: contain;
+    background-size: 80%;
     background-repeat: no-repeat;
 }
 .item-3 {
