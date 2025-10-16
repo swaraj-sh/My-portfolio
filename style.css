@@ -219,6 +219,7 @@ body {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 20px;
+    font-family: 'Playfair Display',serif;
 }
 
 .about-text p {
@@ -253,6 +254,7 @@ body {
     font-weight: 700;
     margin-bottom: 50px;
     text-align: left;
+    font-family: 'Playfair Display',serif;
 }
 
 .portfolio-grid {
@@ -314,6 +316,7 @@ body {
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 60px;
+    font-family: 'Playfair Display',serif;
 }
 
 .services-grid {
@@ -384,6 +387,7 @@ body {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 30px;
+    font-family: 'Playfair Display',serif;
 }
 
 .social-links {
