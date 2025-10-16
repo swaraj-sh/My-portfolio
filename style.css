@@ -122,6 +122,7 @@ body {
     /* background-image: url('path/to/your/image.jpg'); */
     background-size: cover;
     background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 /* Spanning items across the grid to create the collage effect */
@@ -143,7 +144,7 @@ body {
     grid-column: 2 / 3;
     grid-row: 2 / 5;
     background-image: url('images/mobile-app.png'); /* Placeholder color */
-    background-size: contain;
+    background-size: 30%;
     background-repeat: no-repeat;
 }
 .item-4 {
@@ -211,4 +212,11 @@ body {
     font-size: 18px;
     color: var(--secondary-text-color);
     line-height: 1.7;
+}
+
+/* --- Hover Effect for Gallery --- */
+.gallery-item:hover {
+    transform: scale(1.05); /* Makes the item 5% larger */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Adds a soft shadow */
+    z-index: 10; /* Ensures the hovered item is on top of others */
 }
