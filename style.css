@@ -144,7 +144,7 @@ body {
     grid-column: 2 / 3;
     grid-row: 2 / 5;
     background-image: url('images/mobile-app.png'); /* Placeholder color */
-    background-size: 30%;
+    background-size: 80%;
     background-repeat: no-repeat;
 }
 .item-4 {
