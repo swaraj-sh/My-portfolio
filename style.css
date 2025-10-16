@@ -537,3 +537,9 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* --- Rule to hide the honeypot spam field --- */
+.hidden {
+    display: none;
+
+}
