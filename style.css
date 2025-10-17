@@ -9,6 +9,12 @@
     --main-font: 'Inter', sans-serif;
 }
 
+/* --- Utility Class for Section Backgrounds --- */
+.bg-light-grey {
+    background-color: #f8f8f8; /* A very subtle, clean grey */
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +24,7 @@
 body {
     font-family: var(--main-font);
     color: var(--primary-text-color);
-    background-color: #f0f0f0; /* The light grey background from the mockup */
+    background-color: var(--background-color); /* This is white color background */
 }
 
 /* ------------------- */
@@ -75,7 +81,6 @@ body {
     max-width: 1400px;
     margin: 0 auto; /* Centers the content */
     padding: 80px 5%;
-    background-color: var(--background-color);
 }
 
 .hero-text {
@@ -87,6 +92,8 @@ body {
     font-weight: 700;
     letter-spacing: 2px;
     font-family: 'Playfair Dosplay',serif;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.1s forwards;
 }
 
 .hero-text h2 {
@@ -95,12 +102,16 @@ body {
     color: var(--secondary-text-color);
     letter-spacing: 3px;
     margin: 10px 0 20px 0;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.2s forwards;
 }
 
 .hero-text p {
     font-size: 20px;
     color: var(--secondary-text-color);
     line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.3s forwards;
 }
 
 /* ------------------- */
@@ -190,7 +201,6 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 100px 5%;
-    background-color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,7 +250,6 @@ body {
 /* ======================== */
 
 .portfolio-section {
-    background-color: #ffffff;
     padding: 80px 5%;
 }
 
@@ -301,7 +310,6 @@ body {
 /* ======================== */
 
 .services-section {
-    background-color: #f0f0f0; /* The light grey background from your design */
     padding: 80px 5%;
     min-height: calc(100vh - 85px); /* Optional: makes the section fill the screen */
 }
@@ -368,7 +376,6 @@ body {
 /* ======================== */
 
 .contact-section {
-    background-color: #f0f0f0;
     padding: 80px 5%;
     display: flex;
     align-items: center;
@@ -601,9 +608,27 @@ body {
 }
 
 .category-title {
-    background-color: #ffffff;
+    /* This positions the title box on top of the image */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    /* Add a semi-transparent background */
+    background-color: rgba(255, 255, 255, 0.9); /* 90% opaque white */
+    backdrop-filter: blur(5px); /* This adds a cool "frosted glass" effect */
+
     padding: 20px 25px;
     text-align: center;
+
+    /* Animation: Make it slide up on hover */
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+    /* Add this new rule */
+.category-card:hover .category-title {
+    transform: translateY(0);
 }
 
 .category-title h3 {
@@ -627,19 +652,39 @@ body {
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 1px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out 0.4s forwards;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    background-color: var(--background-color); /* Change to white */
+    color: var(--primary-text-color); /* Change text to black */
+    transform: translateY(-3px); /* Keep the lift */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Keep the shadow */
+    border: 1px solid var(--primary-text-color); /* Add a black border */
 }
+
 
 /* --- Make the Category Grid Responsive --- */
 @media (max-width: 900px) {
     .category-grid {
         grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
     }
+
+        /* --- Responsive Fix for Portfolio Category Cards --- */
+    .category-title {
+        position: static; /* Revert to being in the normal page flow */
+        transform: none; /* Remove the slide-up (hidden) effect */
+        background-color: #ffffff; /* Go back to a solid white background */
+        backdrop-filter: none; /* Remove the blur */
+    }
+    
+    .category-card:hover .category-title {
+        transform: none; /* Ensure hover does nothing on mobile */
+    }
+
 }
 
 @media (max-width: 480px) {
