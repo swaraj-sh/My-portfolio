@@ -26,6 +26,20 @@ body {
     color: var(--primary-text-color);
     background-color: var(--background-color); /* This is white color background */
 }
+body::after {
+    content: "";
+    background-image: url('images/noise-texture.png'); /* The file you just saved */
+    background-repeat: repeat;
+    position: fixed; /* This makes it cover the whole screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.08; /* This is the key. Make it VERY subtle */
+    pointer-events: none; /* Lets you click "through" it */
+    z-index: 9999; /* Make sure it's on top of everything */
+}
+
 
 /* ------------------- */
 /* Navigation Bar      */
@@ -34,6 +48,10 @@ body {
     background-color: var(--background-color);
     padding: 20px 5%; /* Use percentage for responsive padding */
     border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .main-nav {
@@ -58,6 +76,27 @@ body {
     letter-spacing: 1px;
     padding-bottom: 5px;
     transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after, .nav-contact a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0; /* Starts at 0 width (so it's invisible) */
+    background-color: var(--primary-text-color); /* The black color */
+    transition: width 0.3s ease; /* Animate the width */
+}
+
+.nav-links a:hover::after, .nav-contact a:hover::after {
+    width: 100%; /* Grow to 100% width on hover */
+}
+
+.nav-links a.active::after, .nav-contact a.active::after {
+    width: 100%; 
 }
 
 .nav-links a:hover {
@@ -66,7 +105,6 @@ body {
 
 .nav-links a.active {
     color: var(--primary-text-color);
-    border-bottom: 2px solid var(--primary-text-color);
 }
 
 
@@ -685,6 +723,120 @@ body {
         transform: none; /* Ensure hover does nothing on mobile */
     }
 
+}
+
+/* --- Fix for Service Card Links --- */
+.service-card-link {
+    text-decoration: none;
+    color: inherit; /* This makes the text use its normal color */
+}
+
+/* ======================================= */
+/* --- Service Detail Page Styles --- */
+/* ======================================= */
+
+.service-detail-page {
+    padding-bottom: 60px; /* Space at the very bottom */
+}
+
+.service-hero {
+    padding: 60px 5%;
+    text-align: center;
+    background-color: var(--background-color); /* White */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.service-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.service-content-container {
+    max-width: 900px; /* Makes text easy to read */
+    margin: 60px auto; /* Center the content */
+    padding: 0 5%;
+}
+
+.service-description h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.service-description p {
+    font-size: 18px;
+    color: var(--secondary-text-color);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.service-showcase {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.service-showcase h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.service-showcase p {
+    font-size: 18px;
+    color: var(--secondary-text-color);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.service-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3-column grid */
+    gap: 20px;
+}
+
+.service-showcase-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* --- CTA Section for Services Page --- */
+.cta-section {
+    text-align: center; /* <-- THIS IS THE LINE THAT FIXES IT */
+    padding: 80px 5%;
+    background-color: var(--background-color); /* White background */
+    margin-top: 40px; /* Space it out from the grid */
+    border-radius: 12px;
+}
+
+.cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.cta-section p {
+    font-size: 18px;
+    color: var(--secondary-text-color);
+    margin-bottom: 30px;
+}
+
+/* --- Make the Service Detail Page Responsive --- */
+@media (max-width: 768px) {
+    .service-hero h1 {
+        font-size: 36px;
+    }
+    .service-description h2, .service-showcase h2 {
+        font-size: 28px;
+    }
+    .service-showcase-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
 }
 
 @media (max-width: 480px) {
