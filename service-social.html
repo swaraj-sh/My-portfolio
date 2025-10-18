@@ -28,18 +28,43 @@
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-light-grey"> <header class="main-header">
-        <nav class="main-nav">
+<body class="bg-light-grey"> 
+    
+    <header class="main-header">
+    <nav class="main-nav">
+
+        <a href="index.html" class="nav-logo">
+            <img src="images/profile-pic.PNG" alt="Swaraj Shandilya Logo">
+        </a>
+
+        <div class="nav-menu-desktop">
             <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="services.html" class="active">SERVICES</a></li> </ul>
-            <ul class="nav-contact">
-                <li><a href="contact.html">CONTACT</a></li>
+                <li><a href="index.html" class="nav-link">HOME</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="portfolio.html" class="nav-link">PORTFOLIO</a></li>
+                <li><a href="services.html" class="nav-link active">SERVICES</a></li>
+                <li><a href="contact.html" class="nav-link">CONTACT</a></li> 
             </ul>
-        </nav>
+        </div>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+
+    </nav>
     </header>
+
+        <div class="mobile-menu" id="nav-menu">
+            <ul class="mobile-nav-links">
+                <li><a href="index.html" class="nav-link">HOME</a></li>
+                <li><a href="about.html" class="nav-link">ABOUT</a></li>
+                <li><a href="portfolio.html" class="nav-link">PORTFOLIO</a></li>
+                <li><a href="services.html" class="nav-link active">SERVICES</a></li>
+                <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            </ul>
+        </div>
 
     <main class="service-detail-page">
 
@@ -80,5 +105,6 @@
 
     </main>
 
+    <script src="main.js"></script>
 </body>
 </html>
