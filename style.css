@@ -110,7 +110,7 @@ body::after {
     left: 0;
     height: 2px;
     width: 0;
-    background-color: var(--primary-text-color);
+    background-color: #2D9CDB; /* Change to Blue */
     transition: width 0.3s ease;
 }
 
@@ -661,7 +661,6 @@ body::after {
 /* --- Rule to hide the honeypot spam field --- */
 .hidden {
     display: none;
-
 }
 
 /* ======================================= */
@@ -739,7 +738,7 @@ body::after {
 
 .cta-button {
     display: inline-block;
-    background-color: var(--primary-text-color); /* The main black color */
+    background-color: #2D9CDB; /* Change to Blue */
     color: var(--background-color); /* The main white color */
     padding: 12px 30px;
     margin-top: 30px; /* Add some space above the button */
@@ -756,7 +755,7 @@ body::after {
 
 .cta-button:hover {
     background-color: var(--background-color); /* Change to white */
-    color: var(--primary-text-color); /* Change text to black */
+    color: #2D9CDB; /* Change to Blue */
     transform: translateY(-3px); /* Keep the lift */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Keep the shadow */
     border: 1px solid var(--primary-text-color); /* Add a black border */
@@ -883,6 +882,13 @@ body::after {
     color: var(--secondary-text-color);
     margin-bottom: 30px;
 }
+
+
+/* --- Typographic Accent --- */
+.highlight {
+    color: #2D9CDB; /* Blue accent color */
+}
+
 
 /* --- Make the Service Detail Page Responsive --- */
 @media (max-width: 768px) {
