@@ -890,6 +890,50 @@ body::after {
 }
 
 
+/* =================================== */
+/* --- Scroll-to-Top Button Styles --- */
+/* =================================== */
+
+.scroll-top {
+    position: fixed; /* Keeps it in place */
+    bottom: 2rem;    /* Distance from bottom */
+    right: 2rem;     /* Distance from right */
+
+    background-color: var(--primary-text-color); /* Black background */
+    color: var(--background-color); /* White arrow */
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Make it circular */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Size of the arrow */
+    text-decoration: none;
+
+    opacity: 0; /* Hidden by default */
+    pointer-events: none; /* Not clickable by default */
+    visibility: hidden; /* Also hidden */
+
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.3s ease;
+    z-index: 100; /* Sits above most content */
+}
+
+/* Style for when the button SHOULD be visible */
+.scroll-top.show-scroll {
+    opacity: 0.8; /* Make it slightly transparent */
+    pointer-events: auto;
+    visibility: visible;
+}
+
+/* Add a subtle hover effect */
+.scroll-top:hover {
+    opacity: 1; /* Fully opaque on hover */
+    transform: translateY(-5px); /* Lift it slightly */
+}
+
+
 /* --- Make the Service Detail Page Responsive --- */
 @media (max-width: 768px) {
     .service-hero h1 {
